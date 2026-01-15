@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f37b4b4f669ac443a95e7a4b0fa6c14, type: 3}
+  m_Name: Ring2
+  m_EditorClassIdentifier: 
+  Id: 171
+  Type: 1
+  Name: "\uCD08\uAE09 \uBC18\uC9C0"
+  Amount: 1
+  SellPrice: 20
+  IsStackable: 0
+  Icon: {fileID: 467470954, guid: df31b673ca1df5f42a8504bb0b9f2496, type: 3}
+  ItemPrefab: {fileID: 156791339180927997, guid: 9c43290d77f87d342828cdb441c6dffc, type: 3}
+  Description: "\uCD08\uBCF4 \uAE30\uC0AC\uB97C \uC704\uD55C \uC7A5\uC2E0\uAD6C"
+  GearType: 7
+  MaxEnhancementLevel: 20
+  EquipLevel: 0
+  Hp: 0
+  Mp: 0
+  Attack: 8
+  Speed: 0
+  Defense: 0
+  EnhanceMaterial: {fileID: 11400000, guid: a70463bec08f17d4687934a9f18c0832, type: 2}

@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7eb342a8b94b5524e9b7aa5d35808450, type: 3}
+  m_Name: HpPotion2
+  m_EditorClassIdentifier: 
+  Id: 11
+  Type: 0
+  Name: "\uACE0\uAE09 \uD790\uB9C1 \uD3EC\uC158"
+  Amount: 1
+  SellPrice: 75
+  IsStackable: 1
+  Icon: {fileID: 2024100179, guid: b09e37f9a91db394aa6e0813568b28fa, type: 3}
+  ItemPrefab: {fileID: 697082841318243639, guid: 42fe58fe1b0cc2540b56b853dc32b6de, type: 3}
+  Description: "\uCCB4\uB825\uC744 60 \uD68C\uBCF5\uC2DC\uCF1C \uC8FC\uB294 \uD3EC\uC158"
+  Hp: 60
+  Mp: 0

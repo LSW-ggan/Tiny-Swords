@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0415fad2027b9ce4495376e122922c9e, type: 3}
+  m_Name: FireAura
+  m_EditorClassIdentifier: 
+  Type: 0
+  Icon: {fileID: 21300000, guid: 963df7c6e5db5744f955efe86e65d86c, type: 3}
+  Duration: 30
+  EffectPrefab: {fileID: 4503486028102547759, guid: 43b4ed5a97a384c43b70c665fecb52f6, type: 3}

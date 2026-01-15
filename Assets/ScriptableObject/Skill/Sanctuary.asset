@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 036021cc25d1e9047b8a71dde83ae9d5, type: 3}
+  m_Name: Sanctuary
+  m_EditorClassIdentifier: 
+  Id: 4
+  SkillName: Sanctuary
+  type: 3
+  SquereIcon: {fileID: 21300000, guid: 296e6d8abbac95c41b7d2a37fefeea22, type: 3}
+  CircleIcon: {fileID: 21300000, guid: ebfb65802115aa140a036f972f9283cc, type: 3}
+  CoolTime: 60
+  Description: "\uB9C8\uB098(80/75/70/65/60)\uB97C \uC18C\uBAA8\uD558\uC5EC, \n\uC804\uBC29\uC5D0
+    \uC5BC\uC74C \uB9DD\uCE58\uB97C \uB0B4\uB824\uCC0D\uC2B5\uB2C8\uB2E4. \n\uBC94\uC704
+    \uB0B4\uC758 \uC801\uB4E4\uC5D0\uAC8C 5\uD68C\uC5D0 \uAC78\uCCD0 \uACF5\uACA9\uB825\uC758
+    50/70/90/120/150(%)\uC758 \n\uB370\uBBF8\uC9C0\uB97C \uC90D\uB2C8\uB2E4.\n\n(\uC7AC\uC0AC\uC6A9
+    \uB300\uAE30\uC2DC\uAC04 : 60\uCD08)"
+  PrerequisiteSkillId: 3
+  requirePreSkillLevel: 3
+  EffectPrefab: {fileID: 4287434878621627687, guid: 9b518d25053473946ad92208c88455d3, type: 3}
+  MaxLevel: 5
+  HealAmount: 000000000000000000000000000000000000000000000000
+  BuffAmount:
+  - 0
+  - 0.5
+  - 0.7
+  - 0.9
+  - 1.2
+  - 1.5
+  ManaRequire: 00000000500000004b00000046000000410000003c000000
+  StatusEffects: []
+  DamageRange: 2
+  DamageEffect: {fileID: 2906825610914910539, guid: 4321d198a89f68b489c25d8e1f460782, type: 3}
