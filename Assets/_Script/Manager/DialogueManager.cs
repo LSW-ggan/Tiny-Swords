@@ -29,7 +29,14 @@ public class DialogueManager : MonoBehaviour {
         DialoguePanel.transform.SetAsLastSibling();
     }
 
+    public void OnDestroy() {
+        if (Instance == this) Instance = null;
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode) {
-        DialoguePanel = Instantiate(DialogueUIPrefab, GlobalUIManager.Instance.GlobalCanvas.transform).GetComponent<DialogueUI>();
+        if (scene.buildIndex != (int)Scenes.BuildNumber.Main && scene.buildIndex != (int)Scenes.BuildNumber.Loading) {
+            DialoguePanel = Instantiate(DialogueUIPrefab, GlobalUIManager.Instance.GlobalCanvas.transform).GetComponent<DialogueUI>();
+        }
     }
 }

@@ -324,7 +324,7 @@ public class PlayerDataManager : MonoBehaviour {
         RequireExprienceTable.Add(0);
         RequireExprienceTable.Add(100);
         for (int i = 2; i < 200; i++) {
-            RequireExprienceTable.Add((int)(RequireExprienceTable[i - 1] * 1.5f));
+            RequireExprienceTable.Add((int)(RequireExprienceTable[i - 1] * 1.1f));
         }
     }
 
@@ -334,6 +334,7 @@ public class PlayerDataManager : MonoBehaviour {
 
     private void OnDestroy() {
         OnLevelChanged -= LevelUp;
+        if (Instance == this) Instance = null;
         SceneManager.activeSceneChanged -= OnSceneChanged;
     }
 
@@ -394,6 +395,7 @@ public class PlayerDataManager : MonoBehaviour {
     private void OnSceneChanged(Scene prevScene, Scene nextScene) {
         // 게임 진입 로딩창에 들어갈 때에는 저장하지 않도록 함
         if (nextScene.buildIndex == (int)Scenes.BuildNumber.Loading) return;
+        if (nextScene.buildIndex == (int)Scenes.BuildNumber.Main) Destroy(gameObject);
         SaveData();
     }
 

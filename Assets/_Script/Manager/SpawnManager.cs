@@ -22,12 +22,15 @@ public class SpawnManager : MonoBehaviour {
     }
 
     private void OnDestroy() {
+        if (Instance == this) Instance = null;
         SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 
     // 씬 전환 이벤트에 등록
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode) {
-        MovePlayerToSpawnPos();
+        if(scene.buildIndex != (int)Scenes.BuildNumber.Main && scene.buildIndex != (int)Scenes.BuildNumber.Loading) {
+            MovePlayerToSpawnPos();
+        }
     }
 
     // 각 지역의 스폰 포인트에 플레이어 스폰

@@ -7,11 +7,16 @@ public class ItemDropManager : MonoBehaviour {
     public ItemLibrary Item;
 
     private void Awake() {
-        if (Instance == null) {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
+        if (Instance != null) {
+            Destroy(gameObject);
+            return;
         }
-        else Destroy(gameObject);
+        Instance = this;
+        DontDestroyOnLoad(gameObject);
+    }
+
+    private void OnDestroy() {
+        if (Instance == this) Instance = null;
     }
 
     public void DropItem(Vector3 pos, List<(int, float)> itemDropTable) {

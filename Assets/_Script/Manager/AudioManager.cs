@@ -41,13 +41,7 @@ public class AudioManager : MonoBehaviour {
             SceneManager.activeSceneChanged += OnSceneChanged;
         }
         else Destroy(gameObject);
-    }
 
-    private void OnDestroy() {
-        SceneManager.activeSceneChanged -= OnSceneChanged;
-    }
-
-    private void Start() {
         _bgmSource = gameObject.AddComponent<AudioSource>();
         _sfxSource = gameObject.AddComponent<AudioSource>();
 
@@ -56,7 +50,14 @@ public class AudioManager : MonoBehaviour {
 
         _bgmSource.loop = true;
         _sfxSource.loop = false;
+    }
 
+    private void OnDestroy() {
+        if(Instance == this) Instance = null;
+        SceneManager.activeSceneChanged -= OnSceneChanged;
+    }
+
+    private void Start() {
         AudioClip mainBackSound = Resources.Load<AudioClip>("Audio/Main");
         _uiButtonSoundClip = Resources.Load<AudioClip>("Audio/Button_Click");
         _itemPickUpSoundClip = Resources.Load<AudioClip>("Audio/Item_Pickup");
@@ -66,6 +67,9 @@ public class AudioManager : MonoBehaviour {
 
     private void OnSceneChanged(Scene prev, Scene next) {
         switch(next.buildIndex) {
+            case (int)Scenes.BuildNumber.Main:
+                BackSoundClip = Resources.Load<AudioClip>("Audio/Main");
+                break;
             case (int)Scenes.BuildNumber.Town:
                 BackSoundClip = Resources.Load<AudioClip>("Audio/Town");
                 break;

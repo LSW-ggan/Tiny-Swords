@@ -53,5 +53,8 @@ public class GeneralStoreNPC : NPC {
         if(IsNearToPlayer && Input.GetKeyDown(InteractKey)) {
             DialogueManager.Instance.DialoguePanel.OnDialogue(this, _sentences, Name.text, _icon, _actions);
         }
+        if (Input.GetKeyDown(ExitKey)) {
+            DialogueManager.Instance.DialoguePanel.EndDialogue();
+        }
     }
 }

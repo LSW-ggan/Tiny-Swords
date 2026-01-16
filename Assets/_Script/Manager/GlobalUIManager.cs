@@ -2,7 +2,6 @@ using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using static UnityEditor.Progress;
 
 public class GlobalUIManager : MonoBehaviour {
     public static GlobalUIManager Instance;
@@ -45,12 +44,23 @@ public class GlobalUIManager : MonoBehaviour {
     }
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode) {
-        GlobalCanvas = GameObject.FindWithTag("GlobalUI").GetComponent<Canvas>();
-        SceneCanvas = GameObject.FindWithTag("SceneUI").GetComponent<Canvas>();
+        Debug.Log(scene.buildIndex);
+        if(scene.buildIndex == (int)Scenes.BuildNumber.Main) {
+            Destroy(gameObject);
+        }
+        else {
+            GlobalCanvas = GameObject.FindWithTag("GlobalUI").GetComponent<Canvas>();
+            SceneCanvas = GameObject.FindWithTag("SceneUI").GetComponent<Canvas>();
 
-        Instantiate(PlayerUIPrefab, GlobalCanvas.transform);
-        Instantiate(QuickSlotUIPrefab, GlobalCanvas.transform);
-        Instantiate(SkillSlotUIPrefab, GlobalCanvas.transform);
+            Instantiate(PlayerUIPrefab, GlobalCanvas.transform);
+            Instantiate(QuickSlotUIPrefab, GlobalCanvas.transform);
+            Instantiate(SkillSlotUIPrefab, GlobalCanvas.transform);
+        }
+    }
+
+    private void OnDestroy() {
+        if(Instance == this) Instance = null;
+        SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 
     private void Update() {

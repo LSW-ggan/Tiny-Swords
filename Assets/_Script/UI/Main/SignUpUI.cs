@@ -30,7 +30,10 @@ public class SignupUI : MonoBehaviour {
     }
 
     public void OnValueChangedPasswordConfirmFIeld() {
-        if(InputPasswordField.text != InputPasswordConfirmField.text){
+        if (InputPasswordConfirmField.text.Length == 0) {
+            PasswordConfirmText.SetText("");
+        }
+        else if(InputPasswordField.text != InputPasswordConfirmField.text){
             PasswordConfirmText.SetText("∫“¿œƒ°");
             PasswordConfirmText.color = new Color(255, 0, 0, 255);
             _isConfirmed = false;

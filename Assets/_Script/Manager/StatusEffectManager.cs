@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class StatusEffectManager : MonoBehaviour {
     public static StatusEffectManager Instance;
@@ -28,6 +29,10 @@ public class StatusEffectManager : MonoBehaviour {
         DontDestroyOnLoad(gameObject);
     }
 
+    private void OnDestroy() {
+        if (Instance == this) Instance = null;
+    }
+
     // String Floating 텍스트 생성
     public void CreateFloatingText(Vector3 worldPosition, string text, TextType type, GameObject target = null) {
         GameObject textObj;
@@ -51,9 +56,9 @@ public class StatusEffectManager : MonoBehaviour {
                 break;
         }
         textObj = Instantiate(floatingText, worldPosition, Quaternion.identity);
-        if (isAttached && target != null) {
-            textObj.transform.SetParent(target.transform);
-        }
+        //if (isAttached && target != null) {
+        //    textObj.transform.SetParent(target.transform);
+        //}
 
         textObj.GetComponent<FloatingText>().SetText(text, isPopText);
         if (audioClip != null) {

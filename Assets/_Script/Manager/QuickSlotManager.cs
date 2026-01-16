@@ -25,6 +25,10 @@ public class QuickSlotManager : MonoBehaviour {
         Items = new InventoryItem[_slotCount];
     }
 
+    private void OnDestroy() {
+        if (Instance == this) Instance = null;
+    }
+
     // 슬롯에 세팅
     public void SetItem(int slotIndex, InventoryItem item) {
         // 이미 다른 퀵슬롯에 들어가 있으면 제거

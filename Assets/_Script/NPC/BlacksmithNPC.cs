@@ -31,8 +31,11 @@ public class BlacksmithNPC : NPC {
     }
 
     private void Update() {
-        if (IsNearToPlayer && Input.GetKeyDown(KeyCode.F)) {
+        if (IsNearToPlayer && Input.GetKeyDown(InteractKey)) {
             DialogueManager.Instance.DialoguePanel.OnDialogue(this, _sentences, Name.text, Icon, _actions);
+        }
+        if(Input.GetKeyDown(ExitKey)) {
+            DialogueManager.Instance.DialoguePanel.EndDialogue();
         }
     }
 }

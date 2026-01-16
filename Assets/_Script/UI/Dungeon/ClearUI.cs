@@ -12,7 +12,7 @@ public class ClearUI : MonoBehaviour {
     private int _townSceneBuildNumber;
 
     public void Init(float startTime, int DungeonNum, int TownNum) {
-        int reward = Random.Range(50, 100);
+        int reward = Random.Range(1500, 2000);
         InventoryManager.Instance.Gold += reward;
         RewardText.SetText($"+{reward.ToString()}");
 

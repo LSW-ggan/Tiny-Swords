@@ -86,6 +86,7 @@ public class InventoryManager : MonoBehaviour {
     }
 
     private void OnDestroy() {
+        if (Instance == this) Instance = null;
         SceneManager.activeSceneChanged -= OnSceneChanged;
     }
 

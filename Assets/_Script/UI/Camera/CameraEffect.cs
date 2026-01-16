@@ -45,6 +45,12 @@ public class CameraEffect : MonoBehaviour {
         FadeIn();
     }
 
+    private void OnDestroy() {
+        if (Instance == this) Instance = null;
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+        StopAllCoroutines();
+    }
+
     public void FadeOut() {
         StartCoroutine(CoFadeOut());
     }
